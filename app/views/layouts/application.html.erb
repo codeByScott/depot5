@@ -9,6 +9,24 @@
   </head>
 
   <body class="<%= controller.controller_name %>">
+    <div id="banner">
+      <%= image_tag('pblogo.png') %>
+      <%= @page_title || "Pragmatic Bookshelf" %>
+    </div>
+
+    <div id="columns">
+      <div id="side">
+        <ul>
+          <li>
+            <a href="">Home</a>
+            <a href="">Questions</a>
+            <a href="">News</a>
+            <a href="">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
