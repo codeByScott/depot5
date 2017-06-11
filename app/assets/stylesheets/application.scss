@@ -14,7 +14,16 @@
  *= require_self
  */
 
+body,
+body > p,
+body > ul,
+body > td {
+  margin: 8px !important
+}
+
  #banner {
+   position: relative;
+   min-height: 40px;
    background: #9c9;
    padding: 10px;
    border-bottom: 2px solid;
@@ -23,7 +32,10 @@
    text-align: center;
 
    img {
-     float: left;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 192px;
    }
  }
 
@@ -36,17 +48,21 @@
    font: bold smaller sans-serif;
  }
 
+ #notice:empty {
+   display: none;
+ }
+
  #columns {
    background: #141;
+   display: flex;
 
    #main {
-     margin-left: 17em;
      padding: 1em;
      background: white;
+     flex: 1;
    }
 
    #side {
-     float: left;
      padding: 1em 2em;
      background: #141;
 
@@ -81,6 +97,22 @@
           }
        }
      }
+   }
+ }
+
+ @media all and (max-width: 800px) {
+   #columns {
+     flex-direction: column-reverse;
+   }
+ }
+
+ @media all and (max-width: 500px) {
+   #banner {
+     height: 1em;
+   }
+
+   #banner .title {
+     display: none;
    }
  }
 
@@ -122,4 +154,9 @@
        display: none;
      }
    }
+ }
+
+ .locale {
+   float: right;
+   margin: -0.25em 0.1em;
  }

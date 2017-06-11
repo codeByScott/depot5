@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Depot</title>
+    <title>Pragprog Books Online Store</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all',
@@ -11,19 +11,17 @@
 
   <body class="<%= controller.controller_name %>">
     <div id="banner">
-      <%= image_tag 'pblogo.png', alt: 'The Pragmatic Bookshelf' %>
+      <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
       <span class="title"><%= @page_title || "Pragmatic Bookshelf" %></span>
     </div>
 
     <div id="columns">
       <div id="side">
-        <div id="cart">
           <% if @cart %>
             <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
               <%= render @cart %>
             <% end %>
           <% end %>
-        </div>
 
         <ul>
           <li>
@@ -33,6 +31,15 @@
             <a href="#">Contact</a>
           </li>
         </ul>
+
+        <% if session[:user_id] %>
+          <ul>
+            <li><%= link_to 'Orders', orders_path %></li>
+            <li><%= link_to 'Products', products_path %></li>
+            <li><%= link_to 'Users', users_path %></li>
+          </ul>
+          <%= button_to 'Logout', logout_path, method: :delete %>
+        <% end %>
       </div>
     </div>
     <div id="main">
