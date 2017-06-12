@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:users_id] = nil
+    session[:user_id] = nil
     redirect_to store_index_url, notice: "Logged Out"
   end
 end

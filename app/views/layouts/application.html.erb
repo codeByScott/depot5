@@ -48,9 +48,11 @@
           <%= button_to 'Logout', logout_path, method: :delete %>
         <% end %>
       </div>
+      <!-- MAIN SECTION -->
+      <div id="main">
+        <%= yield %>
+      </div>
     </div>
-    <div id="main">
-      <%= yield %>
-    </div>
+
   </body>
 </html>
