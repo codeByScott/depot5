@@ -1,24 +1,7 @@
-# README
+# Agile Web Development with Rails 5 - The Depot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Depot project is from the Agile Web Development with Rails 5 book by Sam Ruby, Dave Thomas, and David Heinemeier Hansson.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby version: 2.2.3
+* Rails version: 5.0.0.1
